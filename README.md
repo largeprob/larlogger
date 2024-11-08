@@ -19,4 +19,4 @@ builder.Logging.AddJsonConsole((op) =>
 
 `});`
 
-![image.png](https://note.youdao.com/yws/res/2584/WEBRESOURCE024201c7c8cd8dd9f214f521a80dda7f)
+![image.png](https://raw.githubusercontent.com/largeprob/larlogger/refs/heads/master/asset/sample/s1.png)
