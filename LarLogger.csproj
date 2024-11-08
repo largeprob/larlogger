@@ -1,0 +1,87 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net462;net471;net472;net48;net481;net5.0;net6.0;net7.0;net8.0;netstandard2.0</TargetFrameworks>
+	<!--<TargetFrameworks>netstandard2.0</TargetFrameworks>-->
+    <PackageId>LarLogger.Core.Web</PackageId>
+    <Version>1.0.1-alpha</Version>
+    <Authors>ChengSheng</Authors>
+    <Company>LarLogger</Company>
+    <Product>LarLogger</Product>
+    <PackageTags>LarLogger;Microsoft;.NET Core;Log</PackageTags>
+    <Description>
+    This is a.NET Core-based logging component that overwrites both Provider and Logger. As well as the addition of general purpose Logger functionality, enjoy.
+    </Description>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>LarLogger</Title>
+  </PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+		<!-- 特定于 .NET Framework 4.7.2 的设置 -->
+		<DefineConstants>NET472</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<!-- 特定于 .NET 8.0 的设置 -->
+		<DefineConstants>NET8_0</DefineConstants>
+	</PropertyGroup>
+
+<!--
+Version="*"始终获取最新版本的包
+Version="8.*" 始终获取 8.x 中的最新版本。
+AllowPrereleaseVersions="true" 包含预发布版本
+	-->
+ <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="*" />
+    <PackageReference Include="System.Text.Json" Version="*" />
+  </ItemGroup>
+	<!--<ItemGroup>
+		--><!-- .NET 8 的配置 --><!--
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
+	</ItemGroup>
+
+	<ItemGroup>
+		--><!-- .NET Framework 4.7.2 的配置 --><!--
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" Condition="'$(TargetFramework)' == 'net472'" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" Condition="'$(TargetFramework)' == 'net472'" />
+	</ItemGroup>-->
+	
+	
+  <!--<ItemGroup>
+	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>-->
+
+	<!--<ItemGroup>
+		--><!--<FrameworkReference Include="Microsoft.AspNetCore.App" />--><!--
+		<FrameworkReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+		<FrameworkReference Include="Microsoft.Extensions.Logging.Abstractions"  Version="8.0.0" />
+		<FrameworkReference Include="Microsoft.Extensions.DependencyInjection"  Version="8.0.0" />
+		<FrameworkReference Include="Microsoft.Extensions.Logging.Configuration"  Version="8.0.0" />
+		<FrameworkReference Include="Microsoft.Extensions.Options"  Version="8.0.0" />
+	</ItemGroup>--> 
+
+
+		<!--<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+			<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+			<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+		</ItemGroup>
+		
+		<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+			<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+			<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+		</ItemGroup>
+
+		<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+			<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+			<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+		</ItemGroup>-->
+</Project>
